@@ -1,5 +1,5 @@
 {
-  "name": "visual-regression-testing-flux-react",
+  "name": "isomorphic-flux-react-react-router",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.babel.js",
@@ -21,18 +21,21 @@
     "object-assign": "^3.0.0",
     "react": "^0.13.3",
     "react-router": "^0.13.3",
+    "react-tools": "^0.13.3",
     "run-parallel": "^1.1.2",
     "vinyl-source-stream": "^1.1.0"
   },
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "babel-eslint": "^3.1.23",
+    "babel-jest": "^5.3.0",
     "babel-loader": "^5.3.2",
     "eslint": "^1.0.0-rc-1",
     "eslint-loader": "^0.14.2",
     "eslint-plugin-react": "^2.7.1",
     "gulp-sass": "^2.0.4",
     "gulp-util": "^3.0.6",
+    "jest-cli": "^0.4.15",
     "minimist": "^1.1.1",
     "node-libs-browser": "^0.5.2",
     "reactify": "^1.1.1",
@@ -41,16 +44,21 @@
     "webpack": "^1.10.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testFileExtensions": ["es6", "js"],
+    "moduleFileExtensions": ["js", "json", "es6"]
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jahrlin/visual-regression-testing-flux-react.git"
+    "url": "https://github.com/jahrlin/isomorphic-flux-react-react-router.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jahrlin/visual-regression-testing-flux-react/issues"
+    "url": "https://github.com/jahrlin/isomorphic-flux-react-react-router/issues"
   },
-  "homepage": "https://github.com/jahrlin/visual-regression-testing-flux-react"
+  "homepage": "https://github.com/jahrlin/isomorphic-flux-react-react-router"
 }

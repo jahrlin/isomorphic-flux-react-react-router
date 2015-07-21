@@ -13,7 +13,7 @@ class App extends Component {
               </Link>
             </h1>
             <h2>
-              by <a href="https://github.com/jahrlin">@jahrlin</a> - <a href="">source</a>
+              by <a href="https://github.com/jahrlin">@jahrlin</a> - <a href="https://github.com/jahrlin/isomorphic-flux-react-react-router">source</a>
             </h2>
           </div>
         </header>

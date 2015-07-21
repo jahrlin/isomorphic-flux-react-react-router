@@ -7,7 +7,7 @@ const CHANGE_EVENT = 'change';
 
 //populate our private list of objects with some dummy data
 var _objects = {};
-for (var i = 20; i >= 0; i--) {
+for (var i = 20; i >= 1; i--) {
   _objects[i] = {
     id: i,
     description: 'object #' + i
@@ -25,6 +25,10 @@ function update(id, description) {
 var ObjectStore = assign({}, EventEmitter.prototype, {
   getObject: function(id) {
     return read(id);
+  },
+
+  getAll: function() {
+    return _objects;
   },
 
   emitChange: function() {
