@@ -1,4 +1,6 @@
-# isomorphic-flux-react-react-router 
+# isomorphic-flux-react-react-router
+[![Build Status](https://travis-ci.org/jahrlin/isomorphic-flux-react-react-router.svg?branch=master)](https://travis-ci.org/jahrlin/isomorphic-flux-react-react-router)
+
 It's literally exactly what it sounds like. 
 Also uses gulp, webpack, es6 (babel), jest, sass and browsersync.
 
