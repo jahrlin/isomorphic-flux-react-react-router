@@ -23,7 +23,8 @@
     "react-router": "^0.13.3",
     "react-tools": "^0.13.3",
     "run-parallel": "^1.1.2",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "when": "^3.7.3"
   },
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
@@ -48,8 +49,15 @@
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
-    "testFileExtensions": ["es6", "js"],
-    "moduleFileExtensions": ["js", "json", "es6"]
+    "testFileExtensions": [
+      "es6",
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "es6"
+    ]
   },
   "repository": {
     "type": "git",

@@ -17,6 +17,9 @@ class Home extends Component {
             <li>
               <Link to="/parameters/15/">This is a parameterized route</Link>
             </li>
+            <li>
+              <Link to="/asyncdata/">This is a route that renders after an async operation</Link>
+            </li>
           </ul>
         </p>
       </div>

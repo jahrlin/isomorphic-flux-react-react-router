@@ -18,7 +18,7 @@ class App extends Component {
           </div>
         </header>
         <div className="main" role="main">
-          <RouteHandler/>
+          <RouteHandler {...this.props}/>
         </div>
       </div>
     );
