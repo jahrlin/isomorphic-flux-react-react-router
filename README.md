@@ -6,6 +6,8 @@ Please note that this is work in progress.
 It's literally exactly what it sounds like. 
 Also uses gulp, webpack, es6 (babel), jest, sass and browsersync.
 
+**Demo:** [http://reactfluxdemo.jahrlin.com/](http://reactfluxdemo.jahrlin.com/)
+
 # install and build/run
 ```bash
 $ git clone https://github.com/jahrlin/isomorphic-flux-react-react-router.git
