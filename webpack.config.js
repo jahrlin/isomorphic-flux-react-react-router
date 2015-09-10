@@ -119,7 +119,16 @@ const appConfig = merge({}, config, {
       new webpack.optimize.UglifyJsPlugin(),
       new webpack.optimize.AggressiveMergingPlugin()
     ])
-  )
+  ),
+  module: {
+    loaders: [
+      {test: /\.css$/, loader: 'style!css', exclude: /node_modules/},
+      {test: /\.less$/, loader: 'style!css!less', exclude: /node_modules/},
+      {test: /\.scss/, loader: 'style!css!sass', exclude: /node_modules/},
+      {test: /\.styl$/, loader: 'style!css!stylus', exclude: /node_modules/},
+      {test: /\.png$/, loader: 'url', exclude: /node_modules/}
+    ]
+  }
 });
 
 //
