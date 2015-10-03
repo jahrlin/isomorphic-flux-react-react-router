@@ -1,5 +1,5 @@
 import App from './components/App.js';
-import Home from './components/pages/home/Home.js';
+import Home from './components/Home.js';
 import Parameters from './components/Parameters.js';
 import Subroute from './components/Subroute.js';
 import AsyncData from './components/AsyncData';
