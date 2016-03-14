@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Router, { RouteHandler, Link } from 'react-router';
+import { Router, RouteHandler, Link } from 'react-router';
 
 class App extends Component {
   render() {
     return (
-      <div className="asd2">
+      <div>
         <header>
           <div className="lead">
             <h1>
@@ -18,7 +18,7 @@ class App extends Component {
           </div>
         </header>
         <div className="main" role="main">
-          <RouteHandler {...this.props}/>
+          {this.props.children}
         </div>
       </div>
     );

@@ -1,15 +1,26 @@
 import React, { Component } from 'react';
+var resolveHash = require('when/keys').all;
 
-class AsyncData extends Component {
+var AsyncData = React.createClass({
+
+  getInitialState() {
+    var self = this;
+
+    // AsyncData.fetchData().then(data => {
+    //   return {user: data.user};
+    // });
+    return {};
+  },
+
   render() {
     return (
       <div>
         <h2>This is the AsyncData component.</h2>
         <div>
           <h3>
-            User ID {this.props.data.asyncdata.user.id},&nbsp;
-              <a href={this.props.data.asyncdata.user.url}>
-                {this.props.data.asyncdata.user.name}
+            User ID {this.state.user.id},&nbsp;
+              <a href={this.state.user.url}>
+                {this.state.user.name}
               </a>
           </h3>
         </div>
@@ -20,7 +31,7 @@ class AsyncData extends Component {
       </div>
     );
   }
-}
+});
 
 AsyncData.fetchData = () => {
   return new Promise((resolve, reject) => {
@@ -37,12 +48,14 @@ AsyncData.fetchData = () => {
 }
 
 AsyncData.propTypes = {
-  data: React.PropTypes.shape({
-    asyncdata: React.PropTypes.shape({
-      user: React.PropTypes.shape({
-        id: React.PropTypes.number,
-        name: React.PropTypes.string,
-        url: React.PropTypes.string
+  route: React.PropTypes.shape({
+    data: React.PropTypes.shape({
+      asyncdata: React.PropTypes.shape({
+        user: React.PropTypes.shape({
+          id: React.PropTypes.number,
+          name: React.PropTypes.string,
+          url: React.PropTypes.string
+        })
       })
     })
   })

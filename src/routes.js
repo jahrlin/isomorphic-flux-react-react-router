@@ -4,15 +4,17 @@ import Parameters from './components/Parameters.js';
 import Subroute from './components/Subroute.js';
 import AsyncData from './components/AsyncData';
 import React from 'react';
-import { Route, DefaultRoute } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 const routes = (
-  <Route path="/" handler={App}>
-    <DefaultRoute handler={Home} />
-    <Route path="subroute/" handler={Subroute} />
-    <Route path="parameters/:id/" handler={Parameters} />
-    <Route name="asyncdata" path="asyncdata/" handler={AsyncData} />
-  </Route>
+  <Router history={browserHistory}>
+    <Route path="/" component={App}>
+      <IndexRoute component={Home} />
+      <Route path="subroute/" component={Subroute} />
+      <Route path="parameters/:id/" component={Parameters} />
+      <Route name="asyncdata" path="asyncdata/" component={AsyncData} />
+    </Route>
+  </Router>
 );
 
 export default routes;

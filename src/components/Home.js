@@ -8,8 +8,10 @@ class Home extends Component {
         <h2>
           This is the 'Home' component.
         </h2>
-        <p>
-          This is also the default route set for our container.
+        <div>
+          <p>
+            This is also the default route set for our container.
+          </p>
           <ul>
             <li>
               <Link to="/subroute/">This is a link to a subroute</Link>
@@ -21,7 +23,7 @@ class Home extends Component {
               <Link to="/asyncdata/">This is a route that renders after an async operation</Link>
             </li>
           </ul>
-        </p>
+        </div>
       </div>
     );
   }

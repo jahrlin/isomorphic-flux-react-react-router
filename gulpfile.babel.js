@@ -79,7 +79,7 @@ gulp.task('browsersync', cb => {
     logPrefix: 'VRT',
     notify: false,
     https: false,
-    proxy: 'localhost:5000'
+    proxy: 'localhost:3000'
   }, cb);
 
   process.on('exit', () => browserSync.exit());
