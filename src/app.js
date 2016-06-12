@@ -1,19 +1,18 @@
-import React from 'react';
-import Router from 'react-router';
-import routes from './routes.js';
-var resolveHash = require('when/keys').all;
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {browserHistory, Router, Route, IndexRoute} from 'react-router'
+import RootLayout from 'containers/RootLayout/RootLayout'
+import Home from 'containers/Home/Home'
+import Subroute from 'containers/Subroute/Subroute'
+import Parameterized from 'containers/Parameterized/Parameterized'
 
-Router.run(routes, Router.HistoryLocation, (Root, state) => {
-  var promises = state.routes.filter(function (route) {
-    // gather up the handlers that have a static `fetchData` method
-    return route.handler.fetchData;
-  }).reduce(function (promises, route) {
-    // reduce to a hash of `key:promise`
-    promises[route.name] = route.handler.fetchData(state.params);
-    return promises;
-  }, {});
-
-  resolveHash(promises).then(function (data) {
-    React.render(<Root data={data}/>, document.getElementById('app'));
-  });
-});
+const mountNode = document.querySelector('#root');
+ReactDOM.render(
+    <Router history={browserHistory}>
+        <Route path="/" component={RootLayout}>
+            <IndexRoute component={Home} />
+            <Route path="subroute/" component={Subroute} />
+            <Route path="parameterized/:param" component={Parameterized} />
+        </Route>
+    </Router>, mountNode
+);
