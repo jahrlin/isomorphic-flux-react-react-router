@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Router, Link } from 'react-router';
-import '../../styles/app.scss'
+import styles from 'styles/app'
 
 class RootLayout extends React.Component {
   render() {

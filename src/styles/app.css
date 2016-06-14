@@ -1,0 +1,41 @@
+:root {
+  --pink: #e91e63;
+  --pink50: #fce4ec;
+  --pink100: #f8bbd0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+html * {
+  box-sizing: inherit;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+  font-family: 'Open sans', 'Helvetica', 'sans-serif';
+  font-size: 18px;
+}
+
+h1 {
+    color: #fff;
+}
+
+h2 {
+  color: var(--pink);
+}
+
+header {
+  background-color: var(--pink);
+  color: #fff;
+  height: 300px;
+  text-align: center;
+
+  & .lead {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
