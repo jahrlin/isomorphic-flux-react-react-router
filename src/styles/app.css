@@ -21,10 +21,28 @@ body {
 
 h1 {
     color: #fff;
+    font-weight: 400;
+    margin: 0;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      padding-bottom: 0.15em;
+
+      &:hover {
+        border-bottom: 2px solid #fff;
+      }
+    }
 }
 
 h2 {
-  color: var(--pink);
+  color: #000;
+  text-align: center;
+
+  & span {
+    color: var(--pink);
+    text-decoration: underline;
+  }
 }
 
 header {
@@ -37,5 +55,29 @@ header {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+  }
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.inner {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+a {
+  color: var(--pink);
+}
+
+.links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    margin-bottom: 0.5em;
   }
 }

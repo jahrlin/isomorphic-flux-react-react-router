@@ -6,6 +6,7 @@ import RootLayout from './containers/RootLayout/RootLayout'
 import Home from './containers/Home/Home'
 import Subroute from './containers/Subroute/Subroute'
 import Parameterized from './containers/Parameterized/Parameterized'
+//import AsyncData from './containers/AsyncData/AsyncData'
 
 export default () => {
   return (

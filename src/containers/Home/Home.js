@@ -4,18 +4,21 @@ import {Link} from 'react-router'
 class Home extends React.Component {
   render() {
     return (
-        <div className="home">
-        <h1>Home</h1>
-        <ul>
-        <li>
-          <Link to="subroute/">A subroute</Link>
-        </li>
-        <li>
-          <Link to="parameterized/value/">A parameterized route</Link>
-        </li>
-        </ul>
-        </div>
-        )
+      <div className="home">
+        <h2>This is the &lt;Home&gt; component</h2>
+          <ul className="links">
+            <li className="links__item">
+              <Link to="subroute/">A subroute</Link>
+            </li>
+            <li className="links__item">
+              <Link to="parameterized/value/">A parameterized route</Link>
+            </li>
+            <li className="links__item">
+              <Link to="asyncdata/">A route that fetches data asynchronuously</Link>
+            </li>
+          </ul>
+       </div>
+    )
   }
 }
 

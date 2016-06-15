@@ -4,12 +4,9 @@ class Parameterized extends React.Component {
   render() {
     return (
         <div className="parameterized">
-        <p>
-          This is a parameterized route.
-        </p>
-        <p>
-          The parameter is {this.props.params.param}
-        </p>
+        <h2>
+          This is a route with a parameter, param is <span>{this.props.params.param}</span>
+        </h2>
         </div>
         )
   }
