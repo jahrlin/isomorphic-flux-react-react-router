@@ -58,17 +58,17 @@
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.1"
+    "webpack": "^1.13.1",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.10.0"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon",
     "build:dev": "cross-env NODE_ENV=development webpack --colors --config ./webpack/webpack.config.dev-server.js",
-    "babel": "babel --presets es2015,stage-0 --ignore node_modules,public",
-    "babel-node": "babel-node --presets es2015,stage-0 --ignore node_modules,dist",
-    "test": "jest"
+    "babel": "babel --presets --ignore node_modules,dist",
+    "babel-node": "babel-node --ignore node_modules,dist"
   },
   "jest": {
-    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react"
     ],
@@ -80,6 +80,9 @@
       "js",
       "json",
       "es6"
+    ],
+    "moduleDirectories": [
+      "styles"
     ],
     "moduleNameMapper": {
       "^.+\\.(css|scss)$": "<rootDir>/test/styleMock.js"
