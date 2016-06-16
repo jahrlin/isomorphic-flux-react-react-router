@@ -15,7 +15,7 @@ export default (app) => {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
   app.use(methodOverride());
-  app.use(express.static(path.join(__dirname, '../..', 'public')));
+  app.use(express.static(path.join(__dirname, '../..', 'dist')));
 
   // I am adding this here so that the Heroku deploy will work
   // Indicates the app is behind a front-facing proxy,
@@ -46,7 +46,7 @@ export default (app) => {
   //                  If secure is set, and you access your site over HTTP, the cookie will not be set.
 
   console.log('--------------------------');
-  console.log('===> 😊  Starting Server . . .');
+  console.log('===>  Starting Server . . .');
   console.log(`===>  Environment: ${ENV}`);
   console.log(`===>  Listening on port: ${app.get('port')}`);
   console.log('--------------------------');
