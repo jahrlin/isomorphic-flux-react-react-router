@@ -10,7 +10,17 @@ Also uses webpack, hmr, es6 (babel), postcss w/ cssnext
 $ git clone https://github.com/jahrlin/isomorphic-flux-react-react-router.git
 $ cd isomorphic-flux-react-react-router
 $ npm install
+```
+
+## Development
+```bash
 $ npm run dev
+```
+
+## Production
+```bash
+$ npm run build
+$ npm start
 ```
 
 # testing
