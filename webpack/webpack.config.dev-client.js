@@ -1,3 +1,5 @@
+// from https://github.com/choonkending/react-webpack-node/blob/master/webpack/webpack.config.dev-client.js
+
 var path = require('path');
 var webpack = require('webpack');
 var assetsPath = path.join(__dirname, '..', 'dist', 'assets');
@@ -5,14 +7,8 @@ var hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&tim
 
 var commonLoaders = [
   {
-    /*
-     * TC39 categorises proposals for babel in 4 stages
-     * Read more http://babeljs.io/docs/usage/experimental/
-     */
     test: /\.js$|\.jsx$/,
     loader: 'babel-loader',
-    // Reason why we put this here instead of babelrc
-    // https://github.com/gaearon/react-transform-hmr/issues/5#issuecomment-142313637
     query: {
       "presets": ["react-hmre", "es2015", "react", "stage-0"],
       "plugins": ["transform-decorators-legacy", "transform-object-assign"]
@@ -21,7 +17,7 @@ var commonLoaders = [
     exclude: path.join(__dirname, '..', 'node_modules')
   },
   {
-    test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
+    test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ico)$/,
     loader: 'url',
     query: {
         name: '[hash].[ext]',
@@ -34,15 +30,13 @@ var commonLoaders = [
 var postCSSConfig = function() {
   return [
     require('postcss-import')({
-      path: path.join(__dirname, '..', 'src', 'css'),
+      path: path.join(__dirname, '..', 'src', 'styles'),
       // addDependencyTo is used for hot-reloading in webpack
       addDependencyTo: webpack
     }),
     require('postcss-cssnext')(),
     require('postcss-simple-vars')(),
     require('postcss-nested')(),
-    // A PostCSS plugin to console.log() the messages registered by other
-    // PostCSS plugins
     require('postcss-reporter')({
       clearMessages: true
     })

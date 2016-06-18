@@ -19,6 +19,7 @@
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "inline-environment-variables-webpack-plugin": "0.0.2",
     "method-override": "^2.3.6",
     "postcss-cssnext": "^2.6.0",
     "postcss-import": "^8.1.2",
@@ -65,8 +66,12 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon",
     "build:dev": "cross-env NODE_ENV=development webpack --colors --config ./webpack/webpack.config.dev-server.js",
-    "babel": "babel --presets --ignore node_modules,dist",
-    "babel-node": "babel-node --ignore node_modules,dist"
+    "babel": "babel --ignore node_modules,dist",
+    "babel-node": "babel-node --ignore node_modules,dist",
+    "start": "cross-env NODE_ENV=production node compiled/index.js",
+    "build": "npm run build:prod && npm run build:node",
+    "build:prod": "cross-env NODE_ENV=production webpack --colors --config ./webpack/webpack.config.prod.js",
+    "build:node": "cross-env NODE_ENV=production npm run babel -- ./server -d ./compiled"
   },
   "jest": {
     "unmockedModulePathPatterns": [
