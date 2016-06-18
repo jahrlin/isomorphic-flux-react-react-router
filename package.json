@@ -67,10 +67,10 @@
     "build:dev": "cross-env NODE_ENV=development webpack --colors --config ./webpack/webpack.config.dev-server.js",
     "babel": "babel --ignore node_modules,dist",
     "babel-node": "babel-node --ignore node_modules,dist",
-    "start": "cross-env NODE_ENV=production node compiled/index.js",
+    "start": "cross-env NODE_ENV=production node build/index.js",
     "build": "npm run build:prod && npm run build:node",
     "build:prod": "cross-env NODE_ENV=production webpack --colors --config ./webpack/webpack.config.prod.js",
-    "build:node": "cross-env NODE_ENV=production npm run babel -- ./server -d ./compiled"
+    "build:node": "cross-env NODE_ENV=production npm run babel -- ./server -d ./build"
   },
   "jest": {
     "unmockedModulePathPatterns": [
