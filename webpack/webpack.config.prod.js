@@ -4,6 +4,7 @@ var path = require("path");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var InlineEnvironmentVariablesPlugin = require('inline-environment-variables-webpack-plugin');
 var webpack = require("webpack");
+var postCssPlugins = require('./postcssPlugins');
 
 var assetsPath = path.join(__dirname, "..", "dist", "assets");
 var publicPath = "/assets/";
@@ -35,22 +36,12 @@ var commonLoaders = [
     }
   },
   { test: /\.css$/,
-    loader: ExtractTextPlugin.extract('style-loader', 'css-loader?module!postcss-loader')
+    loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader')
   }
 ];
 
 var postCSSConfig = function() {
-  return [
-    require('postcss-import')(),
-    require('postcss-simple-vars')(),
-    require('postcss-nested')(),
-    require('autoprefixer')({
-      browsers: ['last 2 versions', 'IE > 8']
-    }),
-    require('postcss-reporter')({
-      clearMessages: true
-    })
-  ];
+    return postCssPlugins;
 };
 
 module.exports = [

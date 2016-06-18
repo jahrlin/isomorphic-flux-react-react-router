@@ -39,7 +39,7 @@ h2 {
   color: #000;
   text-align: center;
 
-  & span {
+  span {
     color: var(--pink);
     text-decoration: underline;
   }
@@ -51,7 +51,7 @@ header {
   height: 300px;
   text-align: center;
 
-  & .lead {
+  .lead {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
