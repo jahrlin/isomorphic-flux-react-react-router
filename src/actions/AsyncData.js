@@ -9,6 +9,6 @@ export function getData() {
           github: 'https://github.com/jahrlin'
         });
       }, 500);
-    })
+    }),
   }
 };
