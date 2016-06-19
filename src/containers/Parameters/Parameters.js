@@ -1,15 +1,17 @@
 import React from 'react';
 
-class Parameterized extends React.Component {
+class Parameters extends React.Component {
   render() {
     return (
-        <div className="parameterized">
+      <div className="parameters">
         <h2>
           This is a route with a parameter, param is <span>{this.props.params.param}</span>
         </h2>
-        </div>
-        )
+        <h3>Used parameters:</h3>
+
+      </div>
+    );
   }
 }
 
-export default Parameterized
+export default Parameters;

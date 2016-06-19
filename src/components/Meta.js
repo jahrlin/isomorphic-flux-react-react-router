@@ -12,11 +12,11 @@ if (__DEVSERVER__) {
 
 const Meta = () => (
   <Helmet
-    htmlAttributes={{"lang": "en", "amp": undefined}}
-    title="React Webpack Node" meta={config.meta}
+    htmlAttributes={{ lang: 'en', amp: undefined }}
+    title={config.title} meta={config.meta}
     link={config.link}
   />
-)
+);
 
 
 ReactDOMServer.renderToString(<Meta />);
